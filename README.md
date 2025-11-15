@@ -13,15 +13,11 @@ Cada usuário pode ter vários empréstimos.
 
 Classes e Objetivos
 1. Livro
+Atributo	Tipo	Descrição
+titulo	String	Título do livro
+autor	String	Nome do autor
 
-Atributos:
-
-titulo – título do livro.
-
-autor – nome do autor.
-
-Objetivo:
-Representar um livro da biblioteca.
+Objetivo: Representar um livro da biblioteca.
 
 Validações:
 
@@ -29,30 +25,26 @@ Título e autor não podem ser nulos ou vazios.
 
 Nome do autor deve começar com letra maiúscula.
 
-Exemplo de toString():
+Exemplo de toString()
 
 - O Pequeno Príncipe(Antoine de Saint-Exupéry)
 
 2. Emprestimo
+Atributo	Tipo	Descrição
+livros	List<Livro>	Lista de livros do empréstimo
+horario	LocalDateTime	Data e hora do empréstimo
 
-Atributos:
+Objetivo: Representar um empréstimo que pode ter múltiplos livros.
 
-livros – lista de livros do empréstimo.
-
-horario – data e hora do empréstimo.
-
-Objetivo:
-Representar um empréstimo, que pode ter múltiplos livros.
-
-Métodos principais:
+Métodos Principais:
 
 addLivro(Livro livro) / removeLivro(Livro livro)
 
 getLivros() / getHorario()
 
-toString() – lista todos os livros do empréstimo e a data do empréstimo.
+toString() – lista todos os livros e a data do empréstimo.
 
-Exemplo de toString() corrigido:
+Exemplo de toString()
 
 @Override
 public String toString() {
@@ -65,24 +57,20 @@ public String toString() {
 }
 
 3. Usuario
+Atributo	Tipo	Descrição
+nome	String	Nome do usuário
+emprestimos	List<Emprestimo>	Lista de empréstimos do usuário
 
-Atributos:
+Objetivo: Cada usuário pode ter vários empréstimos, mostrando a composição:
+Usuário → Empréstimos → Livros
 
-nome – nome do usuário.
-
-emprestimos – lista de empréstimos do usuário.
-
-Objetivo:
-Cada usuário pode ter vários empréstimos, mostrando a composição:
-Usuário → Empréstimos → Livros.
-
-Métodos principais:
+Métodos Principais:
 
 addEmprestimo(Emprestimo emprestimo)
 
 toString() – mostra todos os empréstimos do usuário, incluindo os livros de cada empréstimo.
 
-Exemplo de toString() corrigido:
+Exemplo de toString()
 
 @Override
 public String toString() {
